@@ -25,18 +25,26 @@ spec:
         envFrom:
         - configMapRef:
             name: cortesia-processor-config
+        # --- CORREÇÃO IMPORTANTE: Health Checks mais tolerantes ---
         readinessProbe:
           httpGet:
             path: /actuator/health
             port: 8081
-          initialDelaySeconds: 45
-          periodSeconds: 20
+          # Espera 60 segundos antes de começar a verificar
+          initialDelaySeconds: 60
+          # Aumenta o timeout da requisição para 5 segundos
+          timeoutSeconds: 5
+          # Aumenta o período entre as verificações
+          periodSeconds: 30
+          # Permite 3 falhas antes de marcar o pod como não-pronto
           failureThreshold: 3
         livenessProbe:
           httpGet:
             path: /actuator/health
             port: 8081
-          initialDelaySeconds: 90
+          # Espera mais tempo para a primeira verificação de "vida"
+          initialDelaySeconds: 120
+          timeoutSeconds: 5
           periodSeconds: 30
           failureThreshold: 3
         resources:
