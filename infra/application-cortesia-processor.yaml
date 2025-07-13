@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cortesia-processor
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/seu-usuario/seu-repo-de-configs.git' 
+    targetRevision: main
+    path: apps/cortesia-processor 
+  destination:
+    server: 'https://kubernetes.default.svc'
+    # Implantando no mesmo namespace da API
+    namespace: cinex-apps 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
