@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       annotations:
-        redeploy-at: "2025-07-13T03:28:20Z"
+        redeploy-at: "2025-07-13T03:38:20Z"
       labels:
         app: cortesia-processor
     spec:

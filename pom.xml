@@ -128,82 +128,78 @@
 	</dependencies>
 
 	<build>
-		<plugins>
+    <plugins>
+        <!-- Plugin do Spring Boot, agora com o nome do JAR fixo -->
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <!-- CORREÇÃO: Força o nome do ficheiro JAR a ser 'app.jar' -->
+                <finalName>app</finalName>
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+        </plugin>
 
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>3.4.6</version>
+        <!-- Sua configuração do Jib está quase perfeita. -->
+        <!-- Apenas garanta que a imagem base tem o 'fontconfig' -->
+        <plugin>
+            <groupId>com.google.cloud.tools</groupId>
+            <artifactId>jib-maven-plugin</artifactId>
+            <version>3.4.6</version>
+            <configuration>
+                <to>
+                    <image>eurival/cortesia-processor-service:latest</image>
+                </to>
+                <from>
+                    <!-- A imagem 'focal' já inclui o 'fontconfig' necessário -->
+                    <image>eclipse-temurin:17-jre-focal</image>
+                </from>
+                <extraDirectories>
+                    <paths>
+                        <path>
+                            <from>${project.basedir}/fonts</from>
+                            <into>/usr/share/fonts/truetype/custom</into>
+                        </path>
+                    </paths>
+                </extraDirectories>
+                <container>
+                    <jvmFlags>
+                        <jvmFlag>-Xms256m</jvmFlag>
+                        <jvmFlag>-Xmx512m</jvmFlag>
+                        <jvmFlag>-Duser.timezone=America/Sao_Paulo</jvmFlag>
+                    </jvmFlags>
+                    <ports>
+                        <port>8081</port>
+                    </ports>
+                    <entrypoint>
+                        <arg>/bin/sh</arg>
+                        <arg>-c</arg>
+                        <!-- Agora este comando irá funcionar, pois o JAR chama-se 'app.jar' -->
+                        <arg>fc-cache -f &amp;&amp; exec java -jar app.jar</arg>
+                    </entrypoint>
+                </container>
+            </configuration>
+        </plugin>
 
-				<configuration>
-					<!-- destino da imagem -->
-					<to>
-						<image>eurival/cortesia-processor-service:latest</image>
-					</to>
-
-					<!-- base JRE -->
-					<from>
-						<image>eclipse-temurin:17-jre</image>
-					</from>
-
-					<!-- cópia das fontes -->
-					<extraDirectories>
-						<paths>
-							<path>
-								<from>${project.basedir}/fonts/montserrat</from>
-								<into>/usr/share/fonts/truetype/montserrat</into>
-							</path>
-						</paths>
-					</extraDirectories>
-
-					<!-- configurações do contêiner -->
-					<container>
-						<jvmFlags>
-							<jvmFlag>-Xms256m</jvmFlag>
-							<jvmFlag>-Xmx512m</jvmFlag>
-							<jvmFlag>-Duser.timezone=America/Sao_Paulo</jvmFlag>
-						</jvmFlags>
-
-						<ports>
-							<port>8081</port>
-						</ports>
-
-						<!-- gera cache de fontes e inicia a aplicação -->
-						<entrypoint>
-							<arg>/bin/sh</arg>
-							<arg>-c</arg>
-							<arg>fc-cache -f &amp;&amp; exec java -jar app.jar</arg>
-						</entrypoint>
-					</container>
-				</configuration>
-			</plugin>
-
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</path>
-					</annotationProcessorPaths>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+        <!-- O resto dos seus plugins -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 
 </project>
