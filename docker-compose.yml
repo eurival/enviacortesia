@@ -1,12 +1,19 @@
 services:
-  cinex-front-end:
+  cortesia-processor-service:          # 1) nome alinhado ao container
     image: eurival/cortesia-processor-service:latest
     container_name: cortesia-processor-service
+
     environment:
-      - TZ=America/Sao_Paulo
-      - JAVA_OPTS=-Xmx512m -Xms256m
+      TZ: America/Sao_Paulo
+      # 2) formato mapa (ou use aspas)
+      JAVA_TOOL_OPTIONS: "-Xmx512m -Xms256m"
+
     ports:
       - "8081:8081"
+
+    # (opcional) reiniciar sempre que cair
+    restart: unless-stopped
+
     networks:
       - cinex-network
 

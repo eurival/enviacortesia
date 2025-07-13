@@ -895,3 +895,28 @@ java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because
 2025-07-13 02:01:15.684 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
 2025-07-13 02:01:15.684 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
 2025-07-13 02:01:17.785 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso
+2025-07-13 02:59:51.472 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - Starting EnviacortesiaApplicationTests using Java 17.0.12 with PID 59212 (started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 02:59:51.474 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - The following 1 profile is active: "dev"
+2025-07-13 03:00:09.480 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 03:00:10.074 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - Started EnviacortesiaApplicationTests in 21.834 seconds (process running for 34.354)
+2025-07-13 03:00:10.087 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 03:00:10.087 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 03:00:10.089 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 03:00:10.089 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 03:00:10.091 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 03:00:10.091 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 03:00:10.091 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 03:00:10.091 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 03:00:10.093 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 03:00:10.093 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 03:00:10.094 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 03:00:10.094 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 03:00:10.757 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 03:00:10.758 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 03:00:11.367 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions revoked: [cortesia-processada-0]
+2025-07-13 03:00:11.367 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions revoked: [cortesia-para-emitir-0]
+2025-07-13 03:00:11.440 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: Consumer stopped
+2025-07-13 03:00:11.440 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: Consumer stopped
+2025-07-13 03:00:11.445 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
+2025-07-13 03:00:11.446 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
+2025-07-13 03:00:13.493 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso
