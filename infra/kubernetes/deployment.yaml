@@ -27,13 +27,25 @@ spec:
             name: cortesia-processor-config
         readinessProbe:
           httpGet:
-            path: /management/health/readiness
+            path: /actuator/health
             port: 8081
           initialDelaySeconds: 45
           periodSeconds: 20
+          failureThreshold: 3
         livenessProbe:
           httpGet:
-            path: /management/health/liveness
+            path: /actuator/health
             port: 8081
           initialDelaySeconds: 90
           periodSeconds: 30
+          failureThreshold: 3
+        resources:
+          # Sua configuração de recursos está correta
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+            ephemeral-storage: "256Mi" # Reserva de armazenamento temporário
+          limits:
+            memory: "512Mi"
+            cpu: "1"
+            ephemeral-storage: "256Mi"   # Limite de armazenamento temporár
