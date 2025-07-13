@@ -8,7 +8,12 @@ COPY pom.xml .
 COPY src src
 
 RUN ./mvnw install -DskipTests
+RUN mkdir -p /usr/share/fonts/truetype/montserrat
+# Copie as fontes para o contêiner
+COPY fonts/ /usr/share/fonts/truetype/montserrat/
 
+# Registre as fontes no sistema
+RUN fc-cache -f -v
 # Estágio 2: Imagem de Produção
 FROM eclipse-temurin:17-jre-focal
 WORKDIR /workspace/app

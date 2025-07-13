@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.7</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
+		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.art.cinex</groupId>
 	<artifactId>enviacortesia</artifactId>
@@ -31,22 +32,22 @@
 		<primefaces.version>14.0.0</primefaces.version>
 	</properties>
 
-	    <repositories>
-        <repository>
-            <id>itext-rups</id>
-            <url>https://repo.itextsupport.com/releases/</url>
-        </repository>
-        <repository>
-            <id>jai-codec</id>
-            <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
-        </repository>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
-            <layout>default</layout>
-        </repository>
-    </repositories>
+	<repositories>
+		<repository>
+			<id>itext-rups</id>
+			<url>https://repo.itextsupport.com/releases/</url>
+		</repository>
+		<repository>
+			<id>jai-codec</id>
+			<url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases/</url>
+		</repository>
+		<repository>
+			<id>prime-repo</id>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 	<dependencies>
 
 		<dependency>
@@ -56,47 +57,47 @@
 
 
 
-        <dependency>
-            <groupId>net.sf.jasperreports</groupId>
-            <artifactId>jasperreports</artifactId>
-            <version>6.20.5</version>            <!-- Use a versão correspondente ao seu arquivo JRXML -->
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.20.5</version>			<!-- Use a versão correspondente ao seu arquivo JRXML -->
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
-<dependency>
-    <groupId>org.primefaces</groupId>
-    <artifactId>primefaces</artifactId>
-    <version>15.0.0</version>
-    <classifier>jakarta</classifier>
-</dependency>
- 
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>15.0.0</version>
+			<classifier>jakarta</classifier>
+		</dependency>
 
-<!-- https://mvnrepository.com/artifact/jakarta.faces/jakarta.faces-api -->
-<dependency>
-    <groupId>jakarta.faces</groupId>
-    <artifactId>jakarta.faces-api</artifactId>
-    <version>4.1.2</version>
-</dependency>
-       <!-- Email -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
- 
-        <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>jakarta.mail</artifactId>
-            <version>2.0.1</version>            <!-- ou algo mais recente -->
-        </dependency>
+
+		<!-- https://mvnrepository.com/artifact/jakarta.faces/jakarta.faces-api -->
+		<dependency>
+			<groupId>jakarta.faces</groupId>
+			<artifactId>jakarta.faces-api</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<!-- Email -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>jakarta.mail</artifactId>
+			<version>2.0.1</version>			<!-- ou algo mais recente -->
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -105,10 +106,10 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -134,35 +135,48 @@
 				<artifactId>jib-maven-plugin</artifactId>
 				<version>3.4.6</version>
 
-				<!-- configuração mínima -->
 				<configuration>
-					<!-- nome da imagem (qualquer registry) -->
+					<!-- destino da imagem -->
 					<to>
-					<image>eurival/cortesia-processor-service:latest</image>
-					<!-- se usar Docker Hub público, não precisa credentials aqui;
-						para registries privados há <auth> ou credHelpers -->
+						<image>eurival/cortesia-processor-service:latest</image>
 					</to>
 
-					<!-- JVM flags padrão da aplicação -->
-					<container>
-					<jvmFlags>
-						<jvmFlag>-Xms256m</jvmFlag>
-						<jvmFlag>-Xmx512m</jvmFlag>
-						<jvmFlag>-Duser.timezone=America/Sao_Paulo</jvmFlag>
-					</jvmFlags>
-					<ports>
-						<port>8081</port>
-					</ports>
-					<!-- user/timezone, labels, workingDirectory, etc. -->
-					</container>
-
-					<!-- base image (JRE) — troca a qualquer momento -->
+					<!-- base JRE -->
 					<from>
-					<image>eclipse-temurin:17-jre</image>
+						<image>eclipse-temurin:17-jre</image>
 					</from>
-				</configuration>
-				</plugin>
 
+					<!-- cópia das fontes -->
+					<extraDirectories>
+						<paths>
+							<path>
+								<from>${project.basedir}/fonts/montserrat</from>
+								<into>/usr/share/fonts/truetype/montserrat</into>
+							</path>
+						</paths>
+					</extraDirectories>
+
+					<!-- configurações do contêiner -->
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms256m</jvmFlag>
+							<jvmFlag>-Xmx512m</jvmFlag>
+							<jvmFlag>-Duser.timezone=America/Sao_Paulo</jvmFlag>
+						</jvmFlags>
+
+						<ports>
+							<port>8081</port>
+						</ports>
+
+						<!-- gera cache de fontes e inicia a aplicação -->
+						<entrypoint>
+							<arg>/bin/sh</arg>
+							<arg>-c</arg>
+							<arg>fc-cache -f &amp;&amp; exec java -jar app.jar</arg>
+						</entrypoint>
+					</container>
+				</configuration>
+			</plugin>
 
 
 			<plugin>
