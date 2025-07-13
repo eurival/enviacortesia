@@ -498,3 +498,333 @@ Caused by: org.springframework.util.PlaceholderResolutionException: Could not re
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
 	... 99 common frames omitted
+2025-07-13 00:59:23.326 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 61777 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 00:59:23.329 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 00:59:26.760 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 00:59:26.788 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 00:59:26.789 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 00:59:26.901 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 00:59:26.902 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3470 ms
+2025-07-13 00:59:27.483 [main] WARN  [] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cadastroPromocaoClient': Injection of autowired dependencies failed
+2025-07-13 00:59:27.483 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
+2025-07-13 00:59:27.484 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
+2025-07-13 00:59:29.780 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso
+2025-07-13 00:59:30.200 [main] INFO  [] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-07-13 00:59:30.234 [main] INFO  [] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-13 00:59:31.730 [main] ERROR [] o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cadastroPromocaoClient': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at br.art.cinex.enviacortesia.EnviacortesiaApplication.main(EnviacortesiaApplication.java:55)
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'cinex.api.auth-url' in value "${cinex.api.auth-url}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1650)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 19 common frames omitted
+2025-07-13 00:59:31.740 [main] ERROR [] b.a.c.e.EnviacortesiaApplication - 💥 Erro fatal ao iniciar a aplicação: Error creating bean with name 'cadastroPromocaoClient': Injection of autowired dependencies failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cadastroPromocaoClient': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at br.art.cinex.enviacortesia.EnviacortesiaApplication.main(EnviacortesiaApplication.java:55)
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'cinex.api.auth-url' in value "${cinex.api.auth-url}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81)
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423)
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128)
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1650)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1628)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	... 19 common frames omitted
+2025-07-13 01:12:20.826 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 71830 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:12:20.830 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 01:12:22.941 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 01:12:22.963 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 01:12:22.964 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 01:12:23.081 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 01:12:23.082 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2095 ms
+2025-07-13 01:12:24.771 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:12:24.957 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-13 01:12:25.376 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Started EnviacortesiaApplication in 5.087 seconds (process running for 5.962)
+2025-07-13 01:12:25.391 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:12:25.391 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:12:25.392 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:12:25.392 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:12:25.392 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:12:25.393 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:12:25.393 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:12:25.393 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:12:25.394 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:12:25.394 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:12:25.395 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:12:25.397 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:12:26.032 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 01:12:26.033 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 01:12:26.202 [scheduling-1] ERROR [] b.a.c.e.service.ApiService - Erro ao buscar entidades: URI is not absolute
+2025-07-13 01:12:26.202 [scheduling-1] ERROR [] b.a.c.e.s.CadastroPromocaoScheduler - ❌ Erro no scheduler
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "pendentes" is null
+	at br.art.cinex.enviacortesia.service.CadastroPromocaoScheduler.processarCadastros(CadastroPromocaoScheduler.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-13 01:12:26.347 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-13 01:12:26.348 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-13 01:12:26.350 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-13 01:13:19.068 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions revoked: [cortesia-para-emitir-0]
+2025-07-13 01:13:19.068 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions revoked: [cortesia-processada-0]
+2025-07-13 01:13:19.577 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: Consumer stopped
+2025-07-13 01:13:19.577 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: Consumer stopped
+2025-07-13 01:13:19.583 [SpringApplicationShutdownHook] INFO  [] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-13 01:13:19.590 [tomcat-shutdown] INFO  [] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-13 01:13:19.601 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
+2025-07-13 01:13:19.602 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
+2025-07-13 01:13:21.673 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso
+2025-07-13 01:13:26.884 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 73137 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:13:26.886 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 01:13:29.009 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 01:13:29.027 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 01:13:29.028 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 01:13:29.136 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 01:13:29.137 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2173 ms
+2025-07-13 01:13:30.858 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:13:31.067 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-13 01:13:31.446 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Started EnviacortesiaApplication in 5.131 seconds (process running for 6.032)
+2025-07-13 01:13:31.466 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:13:31.466 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:13:31.468 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:13:31.469 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:13:31.469 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:13:31.469 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:13:31.472 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:13:31.474 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:13:31.475 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:13:31.476 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:13:31.476 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:13:31.477 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:13:32.137 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 01:13:32.137 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 01:13:32.208 [scheduling-1] ERROR [] b.a.c.e.service.ApiService - Erro ao buscar entidades: URI is not absolute
+2025-07-13 01:13:32.208 [scheduling-1] ERROR [] b.a.c.e.s.CadastroPromocaoScheduler - ❌ Erro no scheduler
+java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because "pendentes" is null
+	at br.art.cinex.enviacortesia.service.CadastroPromocaoScheduler.processarCadastros(CadastroPromocaoScheduler.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-13 01:13:32.359 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-13 01:13:32.359 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-13 01:13:32.361 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-13 01:14:32.688 [scheduling-1] ERROR [] b.a.c.e.service.ApiService - Erro ao buscar entidades: URI is not absolute
+2025-07-13 01:14:32.688 [scheduling-1] ERROR [] b.a.c.e.s.CadastroPromocaoScheduler - ❌ Erro no scheduler
+java.lang.NullPointerException: Cannot invoke "java.util.List.isEmpty()" because "pendentes" is null
+	at br.art.cinex.enviacortesia.service.CadastroPromocaoScheduler.processarCadastros(CadastroPromocaoScheduler.java:44)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-07-13 01:15:17.386 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 75012 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:15:17.388 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 01:15:19.269 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 01:15:19.287 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 01:15:19.288 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 01:15:19.361 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 01:15:19.362 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1897 ms
+2025-07-13 01:15:21.287 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:15:21.449 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-13 01:15:21.818 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Started EnviacortesiaApplication in 4.944 seconds (process running for 5.808)
+2025-07-13 01:15:21.832 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:15:21.832 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:15:21.833 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:15:21.834 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:15:21.834 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:15:21.834 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:15:21.834 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:15:21.835 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:15:21.835 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:15:21.836 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:15:21.836 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:15:21.838 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:15:22.515 [scheduling-1] ERROR [] b.a.c.e.service.ApiService - Erro ao buscar entidades: URI is not absolute
+2025-07-13 01:15:22.859 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-13 01:15:22.860 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-13 01:15:22.861 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-07-13 01:15:56.581 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 75974 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:15:56.584 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 01:15:58.440 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 01:15:58.458 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 01:15:58.458 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 01:15:58.542 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 01:15:58.544 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1865 ms
+2025-07-13 01:16:00.232 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:16:00.395 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-13 01:16:00.780 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Started EnviacortesiaApplication in 4.745 seconds (process running for 5.562)
+2025-07-13 01:16:00.797 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:16:00.798 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:16:00.799 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:16:00.800 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:16:00.800 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:16:00.800 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:16:00.801 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:16:00.801 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:16:00.802 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:16:00.804 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:16:00.805 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:16:00.806 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:16:02.184 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-13 01:16:02.185 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-13 01:16:02.189 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-07-13 01:16:41.190 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 01:16:41.190 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 01:27:00.337 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Starting EnviacortesiaApplication using Java 17.0.12 with PID 85042 (/Volumes/Part_Journaling/projetos/cinex/enviacortesia/target/classes started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:27:00.339 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - The following 1 profile is active: "dev"
+2025-07-13 01:27:02.177 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-13 01:27:02.192 [main] INFO  [] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-13 01:27:02.192 [main] INFO  [] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-13 01:27:02.262 [main] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-13 01:27:02.262 [main] INFO  [] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1845 ms
+2025-07-13 01:27:03.662 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:27:03.816 [main] INFO  [] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-13 01:27:04.130 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - Started EnviacortesiaApplication in 4.279 seconds (process running for 5.36)
+2025-07-13 01:27:04.143 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:27:04.144 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:27:04.145 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:27:04.145 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:27:04.145 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:27:04.145 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:27:04.146 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:27:04.146 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:27:04.147 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:27:04.147 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:27:04.147 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:27:04.148 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:27:05.750 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-13 01:27:05.750 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-13 01:27:05.753 [RMI TCP Connection(2)-127.0.0.1] INFO  [] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-07-13 01:27:38.428 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 01:27:38.428 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 01:27:51.735 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions revoked: [cortesia-para-emitir-0]
+2025-07-13 01:27:51.735 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions revoked: [cortesia-processada-0]
+2025-07-13 01:27:52.264 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: Consumer stopped
+2025-07-13 01:27:52.264 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: Consumer stopped
+2025-07-13 01:27:52.267 [SpringApplicationShutdownHook] INFO  [] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-13 01:27:52.275 [tomcat-shutdown] INFO  [] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-13 01:27:52.286 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
+2025-07-13 01:27:52.286 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
+2025-07-13 01:27:54.337 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso
+2025-07-13 01:28:17.701 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - Starting EnviacortesiaApplicationTests using Java 17.0.12 with PID 86201 (started by eurival in /Volumes/Part_Journaling/projetos/cinex/enviacortesia)
+2025-07-13 01:28:17.702 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - The following 1 profile is active: "dev"
+2025-07-13 01:28:20.803 [main] INFO  [] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2025-07-13 01:28:21.429 [main] INFO  [] b.a.c.e.EnviacortesiaApplicationTests - Started EnviacortesiaApplicationTests in 4.147 seconds (process running for 5.418)
+2025-07-13 01:28:21.440 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🔧 Executando verificações pós-inicialização...
+2025-07-13 01:28:21.441 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Verificações concluídas
+2025-07-13 01:28:21.443 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:28:21.443 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 CORTESIA PROCESSOR SERVICE INICIADO!
+2025-07-13 01:28:21.443 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎉 ========================================
+2025-07-13 01:28:21.444 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📱 Aplicação: cortesia-processor-service
+2025-07-13 01:28:21.444 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🌐 Porta: 8081
+2025-07-13 01:28:21.445 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - ☕ Java Version: 17.0.12
+2025-07-13 01:28:21.445 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📡 Kafka Bootstrap: 15.229.173.87:19092
+2025-07-13 01:28:21.446 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 👥 Consumer Group: cortesia-processor-group
+2025-07-13 01:28:21.446 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 🎯 Aplicação pronta para processar solicitações de cortesia!
+2025-07-13 01:28:21.447 [main] INFO  [] b.a.c.e.EnviacortesiaApplication - 📊 Monitoramento: http://localhost:8081/actuator/health
+2025-07-13 01:28:22.191 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions assigned: [cortesia-para-emitir-0]
+2025-07-13 01:28:22.191 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions assigned: [cortesia-processada-0]
+2025-07-13 01:28:22.859 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: partitions revoked: [cortesia-para-emitir-0]
+2025-07-13 01:28:22.860 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: partitions revoked: [cortesia-processada-0]
+2025-07-13 01:28:23.364 [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group-monitor: Consumer stopped
+2025-07-13 01:28:23.365 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  [] o.s.k.l.KafkaMessageListenerContainer - cortesia-processor-group: Consumer stopped
+2025-07-13 01:28:23.370 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 🛑 Iniciando shutdown da aplicação...
+2025-07-13 01:28:23.371 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - 📤 Fazendo flush do producer Kafka...
+2025-07-13 01:28:25.413 [SpringApplicationShutdownHook] INFO  [] b.a.c.e.EnviacortesiaApplication - ✅ Shutdown concluído com sucesso

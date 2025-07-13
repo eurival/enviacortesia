@@ -41,7 +41,11 @@ public class CadastroPromocaoScheduler {
 
             do {
                 pendentes = client.buscarNaoEnviados(pageSize);
-
+                if (pendentes ==null || pendentes.isEmpty()) {
+                  //  log.info("✅ Nenhum cadastro pendente encontrado");
+                   // log.info("✅ Nenhum cadastro pendente encontrado");
+                    return; // sai se não houver pendentes
+                }
                 for (CadastropromocaoDTO dto : pendentes) {
                     producer.enviarSolicitacao(mapear(dto));
                     client.marcarEnviado(dto);

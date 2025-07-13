@@ -57,7 +57,7 @@ public abstract class ApiService {
         return headers;
     }
     protected String obterToken()  {
-        String url = AUTH_URL;
+        String url = baseUrl+ AUTH_URL;
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
@@ -99,7 +99,8 @@ public abstract class ApiService {
         // Construção da URL com paginação e filtros
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.newInstance()
                // .scheme(schema)
-                .host(baseUrl)
+               
+                .fromUriString(baseUrl)
              //   .port(port)
                 .path( endpoint)
                 .queryParam("page", page)
@@ -141,7 +142,7 @@ public abstract class ApiService {
         // Construção da URL para contagem
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.newInstance()
         //        .scheme(schema)
-                .host(baseUrl)
+                .fromUriString(baseUrl)
         //        .port(port)
                 .path( endpoint + "/count");
 
@@ -171,7 +172,7 @@ public abstract class ApiService {
 
         String url = UriComponentsBuilder.newInstance()
            //     .scheme(schema)
-                .host(baseUrl)
+                .fromUriString(baseUrl)
           //      .port(port)
                 .path( endpoint)
                 .toUriString();
@@ -191,7 +192,7 @@ public abstract class ApiService {
 
         String url = UriComponentsBuilder.newInstance()
            //     .scheme(schema)
-                .host(baseUrl)
+                .fromUriString(baseUrl)
          //       .port(port)
                 .path( endpoint + "/" + entityId)
                 .toUriString();
@@ -211,7 +212,7 @@ public abstract class ApiService {
 
         String url = UriComponentsBuilder.newInstance()
            //     .scheme(schema)
-                .host(baseUrl)
+                .fromUriString(baseUrl)
          //       .port(port)
                 .path( endpoint + "/" + entityId)
                 .toUriString();
@@ -230,7 +231,7 @@ public abstract class ApiService {
 
         String url = UriComponentsBuilder.newInstance()
           //      .scheme(schema)
-                .host(baseUrl)
+                .fromUriString(baseUrl)
            //     .port(port)
                 .path(endpoint + "/" + entityId)
                 .toUriString();

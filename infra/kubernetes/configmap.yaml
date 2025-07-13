@@ -7,7 +7,8 @@ data:
   # Configuração de comunicação interna com a API
   CINEX_API_BASE-URL: "http://cinexapi-service.cinex-apps:8080/api"
   CINEX_API_CADASTRO-PATH: "/cadastropromocaos?cupomEnviado.equals=false"
-
+  CINEX_API_AUTH-URL: "/authenticate"
+  
   # Tópicos do Kafka
   APP_KAFKA_TOPICS_CORTESIA-PARA-EMITIR: "cortesia-para-emitir"
   APP_KAFKA_TOPICS_CORTESIA-PROCESSADA: "cortesia-processada"
