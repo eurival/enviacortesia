@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - enviacortesia.roletacinex.art.br
+    - enviacortesia.ingressocinex.com.br
     secretName: cortesia-processor-tls
   rules:
-  - host: enviacortesia.roletacinex.art.br
+  - host: enviacortesia.ingressocinex.com.br
     http:
       paths:
       - path: /
