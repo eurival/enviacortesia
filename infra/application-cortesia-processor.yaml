@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/seu-usuario/seu-repo-de-configs.git' 
+    repoURL: 'https://github.com/eurival/enviacortesia' 
     targetRevision: main
     path: apps/cortesia-processor 
   destination:

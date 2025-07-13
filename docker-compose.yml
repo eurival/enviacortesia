@@ -1,0 +1,15 @@
+services:
+  cinex-front-end:
+    image: eurival/cortesia-processor-service:latest
+    container_name: cortesia-processor-service
+    environment:
+      - TZ=America/Sao_Paulo
+      - JAVA_OPTS=-Xmx512m -Xms256m
+    ports:
+      - "8081:8081"
+    networks:
+      - cinex-network
+
+networks:
+  cinex-network:
+    external: true

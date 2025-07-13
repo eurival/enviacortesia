@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cortesia-processor-config
+  namespace: cinex-apps
+data:
+  # Configuração de comunicação interna com a API
+  CINEX_API_BASE-URL: "http://cinexapi-service.cinex-apps:8080/api"
+  CINEX_API_CADASTRO-PATH: "/cadastropromocaos?cupomEnviado.equals=false"
+
+  # Tópicos do Kafka
+  APP_KAFKA_TOPICS_CORTESIA-PARA-EMITIR: "cortesia-para-emitir"
+  APP_KAFKA_TOPICS_CORTESIA-PROCESSADA: "cortesia-processada"
+  APP_KAFKA_TOPICS_CORTESIA-ERRO: "cortesia-erro"
+
+  # Configurações de Email
+  APP_EMAIL_FROM: "gedtotal@gmail.com"
+  APP_EMAIL_TIMEOUT-SECONDS: "60"
+  APP_EMAIL_RETRY-ATTEMPTS: "3"
+
+  # Configurações de Cortesia
+  APP_CORTESIA_QUANTIDADE-PADRAO: "2"
+  APP_CORTESIA_DESTINACAO: "Promoção de férias Cinex"
+  APP_CORTESIA_VALIDADE-IMPRESSAO: "2025-08-01"
+
+  # Adicione outras propriedades 'app.*' aqui, se necessário

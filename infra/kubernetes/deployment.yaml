@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cortesia-processor-deployment
-  # Vamos colocar no mesmo namespace da API para facilitar a comunicação
   namespace: cinex-apps 
 spec:
   replicas: 1
@@ -16,21 +15,19 @@ spec:
     spec:
       containers:
       - name: cortesia-processor
-        image: sua-imagem/cortesia-processor:latest # Substitua pela sua imagem
+        image: eurival/cortesia-processor-service:latest
         ports:
-        - containerPort: 8081 # A porta que a sua aplicação escuta
-        env:
+        - containerPort: 8081
         # --- CORREÇÃO IMPORTANTE ---
-        # Sobrescreve a propriedade 'cinex.api.base-url' do seu application.properties.
-        # O Spring Boot converte automaticamente a variável de ambiente para o formato de propriedade.
-        - name: CINEX_API_BASE-URL
-          value: "http://cinexapi-service.cinex-apps:8080/api"
-        # Adicione outras variáveis de ambiente se necessário (banco de dados, kafka, etc.)
+        # Carrega todas as chaves do ConfigMap como variáveis de ambiente
+        envFrom:
+        - configMapRef:
+            name: cortesia-processor-config
         readinessProbe:
           httpGet:
             path: /management/health/readiness
             port: 8081
-          initialDelaySeconds: 45 # Dê mais tempo para apps com Kafka
+          initialDelaySeconds: 45
           periodSeconds: 20
         livenessProbe:
           httpGet:
